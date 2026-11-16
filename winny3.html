@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Tiny Wish</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, serif;
+    text-align: center;
+    background:
+    radial-gradient(ellipse at 10% 70%, #ffd3e2, transparent 55%),
+    radial-gradient(ellipse at 100% 90%, #ffe1eb, transparent 50%),
+    linear-gradient(white, #fff0f5);
+}
+
+h1 {
+    margin-top: 100px;
+    color: #542a35;
+    font-size: 36px;
+}
+
+.subtitle {
+    color: #553b45;
+    font-size: 19px;
+}
+
+.envelope-area {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.envelope {
+    position: relative;
+    width: 310px;
+    height: 200px;
+    background: #ffd5e2;
+    border-radius: 8px 8px 25px 25px;
+    box-shadow: 0 15px 35px #e8a9bb;
+    cursor: pointer;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+    transparent 49.5%, #fff0f5 50%),
+    linear-gradient(225deg,
+    transparent 49.5%, #ffeaf1 50%);
+    border-radius: 8px 8px 25px 25px;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 105px;
+    background: #f9bfd2;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: 0.8s;
+    z-index: 2;
+}
+
+.seal {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    background: #c94e75;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    z-index: 3;
+}
+
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+.tap {
+    color: #946e7a;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 350px;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 30px #dba4b7;
+    color: #7b3650;
+    z-index: 10;
+}
+
+.message.show {
+    display: block;
+}
+
+.message h2 {
+    color: #c94e75;
+}
+
+button {
+    border: none;
+    padding: 12px 25px;
+    background: #d85b82;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>A tiny wish is waiting</h1>
+
+<p class="subtitle">
+    စာအိတ်လေးကိုနှိပ်ပါ
+</p>
+<a href="winy.html"></a>
+
+<div class="envelope-area">
+
+    <div class="envelope" id="envelope"
+         onclick="openEnvelope()">
+
+        <div class="flap"></div>
+
+        <div class="seal">K♥</div>
+
+    </div>
+
+    <p class="tap">Tap to open</p>
+
+</div>
+
+<div class="message" id="message">
+
+    <h2>Happy Birthday! 🎂</h2>
+
+    <p>
+        Wishing you happiness, love,
+        and beautiful moments.
+    </p>
+
+    <p>
+        May all your little wishes
+        come true. ❤️
+    </p>
+
+    <button onclick="closeMessage()">
+        Close
+    </button>
+
+</div>
+
+<script>
+    function openEnvelope() {
+      const envelope = document.getElementById('envelope');
+      
+      // စာအိတ်အဖုံးပွင့်မည်
+      envelope.classList.add('open');
+
+      // 0.7 စက္ကန့်အကြာတွင် မျက်နှာပြင်မှိန်သွားပြီး ကိတ်မုန့် page သို့ ရောက်သွားမည်
+      setTimeout(() => {
+        document.body.style.opacity = '0';
+        
+        setTimeout(() => {
+          // ကိုယ်သွားချင်သော ကိတ်မုန့် HTML ဖိုင်နာမည် (winny.html သို့မဟုတ် အခြားဖိုင်နာမည်)
+          window.location.href = "winy.html"; 
+        }, 400);
+      }, 700);
+    }
+  </script>
+</body>
+</html>

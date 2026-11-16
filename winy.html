@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cake</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Happy Birthday စာသား ဒီဇိုင်း */
+        .birthday-text {
+            color: #fce7f3;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 60px; /* ဖယောင်းတိုင်မီးတောက်နဲ့ မထိအောင် အကွာအဝေးချိန်ထားခြင်း */
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #ec4899, 0 0 20px #db2777;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ec4899, 0 0 20px #db2777;
+            }
+            to {
+                text-shadow: 0 0 15px #f472b6, 0 0 30px #ec4899, 0 0 40px #f472b6;
+            }
+        }
+
+        .cake {
+            position: relative;
+            width: 250px;
+            height: 200px;
+        }
+
+        /* ပန်းကန်ပြား */
+        .plate {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 20px;
+            background-color: #d1d5db;
+            border-radius: 10px;
+        }
+
+        /* ကိတ်မုန့်အလွှာများ */
+        .layer {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        .layer-bottom {
+            bottom: 20px;
+            width: 220px;
+            height: 60px;
+            background-color: #f472b6;
+        }
+
+        .layer-middle {
+            bottom: 80px;
+            width: 180px;
+            height: 60px;
+            background-color: #ec4899;
+        }
+
+        .layer-top {
+            bottom: 140px;
+            width: 140px;
+            height: 50px;
+            background-color: #db2777;
+        }
+
+        /* ဖယောင်းတိုင်များ */
+        .candle {
+            position: absolute;
+            top: -30px;
+            width: 10px;
+            height: 40px;
+            background-color: #ffffff;
+            border-radius: 3px;
+        }
+
+        .candle-1 { left: 35px; }
+        .candle-2 { left: 65px; }
+        .candle-3 { left: 95px; }
+
+        /* မီးတောက်များ */
+        .fire {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 15px;
+            background-color: #fbbf24;
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: 0 0 10px #f59e0b;
+            animation: flicker 0.6s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateX(-50%) scale(1.15);
+                opacity: 1;
+                background-color: #fef08a;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ဖယောင်းတိုင်အပေါ်မှ စာသား -->
+    <div class="birthday-text">Happy Birthday!<br><br>
+    touch cake please</div>
+    
+
+    <a href="winny4.html">
+    <div class="cake">
+        <!-- ကိတ်မုန့်နဲ့ ဖယောင်းတိုင် ကုဒ်များ -->
+    
+
+    <div class="cake">
+        <div class="plate"></div>
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="layer layer-top">
+            <div class="candle candle-1"><div class="fire"></div></div>
+            <div class="candle candle-2"><div class="fire"></div></div>
+            <div class="candle candle-3"><div class="fire"></div></div>
+        </div>
+    </div>
+</div>
+</a>
+</body>
+</html>

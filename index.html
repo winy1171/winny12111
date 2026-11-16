@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang=“my”>
+<head>
+<meta charset=“UTF-8”>
+<meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+<title>Happy Birthday</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff5f8, #ffe1e9, #fff0f5);
+    overflow: hidden;
+}
+
+.card {
+    width: 90%;
+    max-width: 680px;
+    min-height: 650px;
+    padding: 65px 25px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid white;
+    border-radius: 65px;
+    box-shadow: 0 15px 50px rgba(220,100,130,0.15);
+    text-align: center;
+    position: relative;
+}
+
+.small-title {
+    color: #903d50;
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 45px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 8vw, 68px);
+    color: #693b49;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 48px;
+    color: #843c57;
+    margin-bottom: 35px;
+}
+
+.message {
+    font-size: 20px;
+    line-height: 2;
+    color: #70515b;
+    margin-bottom: 35px;
+}
+
+button {
+    background: linear-gradient(135deg, #ee819c, #cf456f);
+    color: white;
+    border: none;
+    padding: 22px 65px;
+    border-radius: 50px;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(210,70,110,0.2);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+.decoration {
+    position: absolute;
+    color: #f7c5d2;
+    font-size: 100px;
+    opacity: 0.3;
+}
+
+.top {
+    top: 0;
+    right: 15px;
+}
+
+.bottom {
+    bottom: 0;
+    left: 10px;
+}
+
+#surprise {
+    display: none;
+    margin-top: 30px;
+    animation: appear 1s ease;
+}
+
+#surprise h2 {
+    color: #c74f75;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+#surprise p {
+    color: #76505d;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.heart {
+    font-size: 35px;
+    margin-top: 15px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.3); }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:480px) {
+    .card {
+        min-height: 560px;
+        padding: 55px 18px;
+        border-radius: 45px;
+    }
+
+    .small-title {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .name {
+        font-size: 38px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 18px 50px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class=“card”>
+
+    <div class=“decoration top”>♡</div>
+    <div class=“decoration bottom”>♡</div>
+
+    <div class=“small-title”>
+        A BIRTHDAY NOTE FOR YOU
+    </div>
+
+    <h1>Happy Birthday</h1>
+
+    <div class=“name”>
+        <h3><b>Nan Wan(Khing War Oo)</b></h3>
+    </div>
+
+    <div class=“message”>
+        ဒီနေ့က မင်းအတွက် အထူးနေ့လေးပါ။<br>
+        မင်းအတွက် Surprise လေးတစ်ခု<br>
+        ပြင်ဆင်ထားပါတယ်။
+    </div>
+
+    <button onclick=“showSurprise()”>
+        <a href="winny3.html" style="text-decoration: none;">
+  <div class="btn">ကြည့်မယ်</div>
+</a>
+    </button>
+    
+
+    <div id=“surprise”>
+        <h2>🎂 Happy Birthday! 🎂</h2>
+
+        <p>
+            မွေးနေ့မှစပြီး နေ့ရက်တိုင်းမှာ<br>
+            ပျော်ရွှင်မှုတွေနဲ့ ပြည့်စုံပါစေ။<br>
+            လိုအင်ဆန္ဒတွေလည်း အားလုံးပြည့်ဝပါစေ။<br>
+            အမြဲတမ်း ပြုံးပျော်နိုင်ပါစေနော်။
+        </p>
+
+        <div class=“heart”>💗 💗 💗</div>
+    </div>
+
+</div>
+
+<script>
+function showSurprise() {
+    document.getElementById(“surprise”).style.display = “block”;
+
+    document.querySelector(“button”).style.display = “none”;
+}
+</script>
+
+</body>
+</html>
